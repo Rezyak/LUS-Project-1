@@ -22,3 +22,5 @@ awk '
 		}
 	}
 }' $config >> paths.config
+
+scripts/create_utils.sh

@@ -2,8 +2,8 @@
 cd "$(dirname "$0")"
 transducer=$1
 lex="$(./get_path.sh 'lexicon.lex')"
-fst_dir="$(./get_path.sh 'FSTs')"
-eps_dir="$(./get_path.sh 'EPSs')"
+fst_dir="$(./get_path.sh 'fsts')"
+eps_dir="$(./get_path.sh 'epss')"
 cd "$(./get_path.sh '/')"
 
 filename=$(basename "$transducer" | cut -d. -f1)
