@@ -2,9 +2,9 @@
 cd "$(dirname "$0")"
 cd "$(../get_path.sh '/')"
 
-word_lemma="$(./Scripts/get_path.sh 'word_lemma')"
-lemma="$(./Scripts/get_path.sh 'lemma')" 
-transducer_model="$(./Scripts/get_path.sh 'TransducerModel')"
+word_lemma="$(./scripts/get_path.sh 'word_lemma')"
+lemma="$(./scripts/get_path.sh 'lemma')" 
+transducer_model="$(./scripts/get_path.sh 'transducerModel')"
 
 tmp1="word_lemma$$"
 out=${transducer_model}/transducer_word_lemma_test1

@@ -2,12 +2,12 @@
 cd "$(dirname "$0")"
 cd "$(../get_path.sh '/')"
 
-word_postag="$(./Scripts/get_path.sh 'word_postag')"
+word_postag="$(./scripts/get_path.sh 'word_postag')"
 # word_postag_concept="$(./Scripts/get_path.sh 'word_postag_concept')"
-postag="$(./Scripts/get_path.sh 'postag')" 
+postag="$(./scripts/get_path.sh 'postag')" 
 # postag_concept="$(./Scripts/get_path.sh 'postag_concept')" 
 
-transducer_model="$(./Scripts/get_path.sh 'TransducerModel')"
+transducer_model="$(./scripts/get_path.sh 'transducerModel')"
 
 tmp1="word_postag$$"
 # tmp2="word_postag_concept$$"

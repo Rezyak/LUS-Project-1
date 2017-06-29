@@ -5,6 +5,7 @@ lex="$(./scripts/get_path.sh 'lexicon.lex')"
 train_feats="$(./scripts/get_path.sh 'train_feats')"
 train_data="$(./scripts/get_path.sh 'train_data')"
 test_data="$(./scripts/get_path.sh 'test_data')"
+
 language_model="$(./scripts/get_path.sh 'concept_language.lm')"
 
 
@@ -17,7 +18,7 @@ result=$(scripts/Test3/create_transducer_word_concept.sh)
 transducer_word_concept="$(scripts/get_path.sh "$result")"
 echo $transducer_word_concept
 
-result=$(./scripts/compile_transducer.sh $transducer_word_concept)
+result=$(./scripts/compile_transducer.sh $transducer_word_concept $lex)
 echo $result
 transducer_word_concept_fst="$(./scripts/get_path.sh "$result")"
 echo $transducer_word_concept_fst
@@ -29,11 +30,11 @@ while read line
 do
 	echo "sentence: $line"
 
-	./scripts/compile_string.sh "$line" ${outline}.fst
+	./scripts/compile_string.sh "$line" ${outline}.fst $lex
 	echo "compose string to transducer"
-	result=$(./scripts/compose_transducer.sh ${outline}.fst ${transducer_word_concept_fst} ${test3})
+	result=$(./scripts/compose_transducer.sh ${outline}.fst ${transducer_word_concept_fst} ${test3} $lex)
 	echo "compose with language model"
-	result2=$(./scripts/compose_transducer.sh ${result}.fst ${language_model} ${test3})
+	result2=$(./scripts/compose_transducer.sh ${result}.fst ${language_model} ${test3} $lex)
 
 	cat ${result2}.fst | fstshortestpath > ${test3}/shortestpath.fst
 	fstprint -isymbols=$lex -osymbols=$lex ${test3}/shortestpath.fst | sort -r -k1 -n >> ${test3}/result.print

@@ -4,7 +4,7 @@ transducer1=$1
 transducer2=$2
 outdir=$3
 
-lex="$(./get_path.sh 'lexicon.lex')"
+lex=$4
 cd "$(./get_path.sh '/')"
 
 filename1=$(basename "$transducer1" | cut -d. -f1)

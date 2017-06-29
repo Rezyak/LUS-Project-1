@@ -93,5 +93,6 @@ rm $tmp3
 
 # create lexicon
 scripts/create_lexicon.sh
+scripts/create_lexicon2.sh
 # create language models
 scripts/create_language_model.sh
