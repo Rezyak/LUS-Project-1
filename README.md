@@ -99,10 +99,17 @@ at the end of the script run
 $ ./scripts/conlleval.pl < results/test_word_concept/to_eval
 
 ```
+### Cleaning the project
+just run 
+```
+$ ./clean.sh
+
+```
+
 *
 ## Built With
 
-* [OpenGRM](http://www.opengrm.org/. Visited 21/04/2017)
+* [OpenGRM](http://www.opengrm.org/)
 * [OpenFST](http://www.openfst.org/twiki/bin/view/FST/WebHome)
 ## Authors
 
