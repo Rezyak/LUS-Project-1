@@ -106,7 +106,6 @@ $ ./clean.sh
 
 ```
 
-*
 ## Built With
 
 * [OpenGRM](http://www.opengrm.org/)
